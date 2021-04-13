@@ -57,3 +57,7 @@ const locParis = {
   maxcust: 38,
   cph: 2.3,
 };
+
+let location = locararray[i]
+for (let i = 0; i < locarray.length; i++) 
+return locarray;
