@@ -2,62 +2,75 @@
 
 alert ('I am alive!');
 
-//What do we need to know
-//Location
-//How many customer
-//How many cookies sold
+const seattle = {
+  cityName: 'Seattle',
+  minCustomer: 23,
+  maxCustomer: 65,
+  avgCookiesPerCustomer: 6.3,
 
-// const shop = {
-// local: '',
-// customers: 0,
-// cookies: 0,
-// getLocation: function() {
-//   console.log(this.local);
-//   let cityList =['Seattle','Tokoyo','Dubai','Paris','Lima'];
-// }
-// }
+  randomNumCustomers: function() {
+    let randomNumber = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1) + this.minCustomer);
+    return randomNumber;
+  }
+}
 
+console.log(seattle, 'prearray')
 
-const locarray = [locTokyo, locSeattle, locLima, locDubai,locParis];
-const times = ['6a','7a','8a','9a','10a','11a','12p','1p','2p','3p','4p','5p','6p','7p',];
+function generateSalesArray(location) {
+  location.grandTotal = 0;
+  location.hourlySalesArray =[];
+  for (let i = 0; i< hoursOfOperation.length; i++) {
+    let customers = location.randomNumCustomers();
+    let cookiesSold = Math.floor(customers * location.avgCookiesPerCustomer);
+    location.grandTotal += cookiesSold;
+    location.hourlySalesArray.push(cookiesSold);
+  }
+}
+generateSalesArray(seattle);
+console.log(seattle, 'with the array')
 
+const hoursOfOperation = ['6a', '7a', '8a', '9a', '10', '11a', '12p', '1p', '2p','3p', '4p','5p', '6p', '7p'];
 
-const locTokyo = {
-  name: Tokyo,
-  mincust: 3,
-  maxcust: 24,
-  cph: 1.2,
+const locationDivElem = document.getElementById('locations');
+function renderLocationInfo(location){
+  const h2Elem = document.createElement('h2');
+  h2Elem.textContent = location.cityName;
+  locationDivElem.appendChild(h2Elem);
+}
 
-};
+function Locations(cityName, minimumCustomers, maximumCustomers, averageCookiesPerCustomer) {
+  this.cityName = cityName;
+  this.minimumCustomers = minimumCustomers;
+  this.maximumCustomers = maximumCustomers;
+  this.averageCookiesPerCustomer = averageCookiesPerCustomer;
 
-const locSeattle = {
-  name: Seattle,
-  mincust: 23,
-  maxcust: 65,
-  cph: 6.3,
-};
+  randomNumCustomers(); {
+  let cookiesSold = Math.floor(customers * location.avgCookiesPerCustomer);
+}
 
-const locLima = {
-  name: Lima,
-  mincust: 2,
-  maxcust: 16,
-  cph: 4.6,
-};
+Locations.prototype.getLocation = function(){
+  this.location = (randomNumCustomers(23, 65) + 'customers');
+  
+  Location.prototype.city = function(){
+    console.log("city name");
+  }
+}
 
-const locDubai = {
-  name: Dubai,
-  mincust: 11,
-  maxcust: 38,
-  cph: 3.7,
-};
-
-const locParis = {
-  name: Paris,
-  mincust: 20,
-  maxcust: 38,
-  cph: 2.3,
-};
-
-let location = locararray[i]
-for (let i = 0; i < locarray.length; i++) 
-return locarray;
+// /<table>
+//         <thead>
+//           <tr>
+//             <td>Stuff inside</td>
+//             <td>more stuff</td>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           <tr>
+//             <td></td>
+//           </tr>
+//         </tbody>
+//         <tfoot>
+//           <tr>
+//             <td></td>
+//           </tr>
+//         </tfoot>
+//       </table>
