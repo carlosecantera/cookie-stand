@@ -1,7 +1,7 @@
 html {background-color: aqua;}
 
-h1 {background-color: salmon; color:gray; height: 100%; border: orangered; border-width: 100px; width: 100px; font-size: 50px;font-family: 'Leckerli One', cursive; float: left;}
+h1 {background-color: salmon; color:gray; height: 100%; border: orangered; border-width: 100px; width: 100px; font-size: 50px;font-family: 'Leckerli One', cursive;}
 
-div {width:780px; height: 200px; float: right;}
+div {width:780px; height: 200px;}
 
 h2 {position: fixed; left: 0px; top: 300px; color: gray; font-family: 'Leckerli One', cursive; font-size: 50px; background-color: salmon;}
